@@ -1,18 +1,22 @@
-from cli.employee_menu import employeeSignup
+from .employee_menu import employeeSignup, employeeLogin
+from .admin_menu import adminLogin
+from repositories.employee_repo import EmployeeDB
+
+emp_db = EmployeeDB()
 
 
 def menu():
     while True:
-        print('''welcome
-press 1 for admin login
-press 2 for employee signup
-press 3 for employee login''')
-        choice = int(input('Enter your option:'))
+        print('''Welcome
+            Press 1 for Admin Login
+            Press 2 for Employee Signup
+            Press 3 for Employee Login''')
+        choice = int(input("Enter your Option:"))
         if choice == 1:
-            pass
+            adminLogin()
         elif choice == 2:
             employeeSignup()
         elif choice == 3:
-            pass
+            employeeLogin()
         else:
-            print('enter a valid no.')
+            print("Select Valid Option!")
